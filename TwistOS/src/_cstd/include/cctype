@@ -1,0 +1,127 @@
+/* ==============================================================
+ * cctype   : Standard header declaring character functions.
+ * --------------------------------------------------------------
+ *
+ * Author   : Mike Falcone
+ * Email    : mr.falcone@gmail.com
+ * Modified : 4/26/09
+ * ==============================================================
+ */
+
+#ifndef __C_CTYPE_
+#define __C_CTYPE_
+
+
+
+/* Standard type: size_t */
+typedef unsigned size_t;
+
+
+
+/* Standard function: isalnum
+ * -------------------------------
+ * Returns nonzero if 'ch' is a letter of the alphabet or a digit.
+ * Returns zero otherwise.
+ */
+ int isalnum(int ch);
+
+ 
+/* Standard function: isalpha
+ * -------------------------------
+ * Returns nonzero if 'ch' is a letter of the alphabet.
+ * Returns zero otherwise.
+ */
+int isalpha(int ch);
+
+
+/* Standard function: iscntrl
+ * -------------------------------
+ * Returns nonzero if 'ch' is a control character (0x0-0x1F and 0x7F).
+ * Returns zero otherwise.
+ */
+int iscntrl(int ch);
+
+
+/* Standard function: isdigit
+ * -------------------------------
+ * Returns nonzero if 'ch' is a digit (0-9).
+ * Returns zero otherwise.
+ */
+int isdigit(int ch);
+
+
+/* Standard function: isgraph
+ * -------------------------------
+ * Returns nonzero if 'ch' is a printable character, excluding space (0x21-0x7E).
+ * Returns zero otherwise.
+ */
+int isgraph(int ch);
+
+
+/* Standard function: islower
+ * -------------------------------
+ * Returns nonzero if 'ch' is a lowercase letter.
+ * Returns zero otherwise.
+ */
+int islower(int ch);
+
+
+/* Standard function: isprint
+ * -------------------------------
+ * Returns nonzero if 'ch' is any printable character, including space (0x21-0x7E).
+ * Returns zero otherwise.
+ */
+int isprint(int ch);
+
+
+/* Standard function: ispunct
+ * -------------------------------
+ * Returns nonzero if 'ch' is a punctuation character.
+ * Returns zero otherwise.
+ */
+int ispunct(int ch);
+
+
+/* Standard function: isspace
+ * -------------------------------
+ * Returns nonzero if 'ch' is a whitespace character (space, horizontal and vertical tabs,
+ * formfeed, carriage return, or newline character).
+ * Returns zero otherwise.
+ */
+int isspace(int ch);
+
+
+/* Standard function: isupper
+ * -------------------------------
+ * Returns nonzero if 'ch' is an uppercase letter.
+ * Returns zero otherwise.
+ */
+int isupper(int ch);
+
+
+/* Standard function: isxdigit
+ * -------------------------------
+ * Returns nonzero if 'ch' is a hexadecimal digit (0-9, A-F, a-f).
+ * Returns zero otherwise.
+ */
+int isxdigit(int ch);
+
+
+/* Standard function: tolower
+ * -------------------------------
+ * Returns lowercase equivalent of 'ch' if 'ch' is a letter.
+ * Returns 'ch' unchanged otherwise.
+ */
+int tolower(int ch);
+
+
+/* Standard function: toupper
+ * -------------------------------
+ * Returns uppercase equivalent of 'ch' if 'ch' is a letter.
+ * Returns 'ch' unchanged otherwise.
+ */
+int toupper(int ch);
+
+
+
+#endif /* __C_CTYPE_ */

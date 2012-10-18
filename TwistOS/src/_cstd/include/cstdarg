@@ -1,0 +1,9 @@
+#ifndef __C_STDARG_
+#define __C_STDARG_
+
+
+typedef int va_list;
+
+
+
+#endif /* __C_STDARG_ */

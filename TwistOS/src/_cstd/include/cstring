@@ -1,0 +1,232 @@
+/* ==============================================================
+ * cstring  : Standard header declaring string functions.
+ * --------------------------------------------------------------
+ *
+ * Author   : Mike Falcone
+ * Email    : mr.falcone@gmail.com
+ * Modified : 4/26/09
+ * ==============================================================
+ */
+ 
+#ifndef __C_STRING_
+#define __C_STRING_
+
+
+/* include the character functions, defines type size_t */
+#include <cctype>
+
+
+
+/* Standard function: memchr
+ * -------------------------------
+ * Searches array pointed to by 'buffer' for first occurence of 'ch' within first
+ * 'count' of characters.
+ *
+ * Returns pointer to first occurence of 'ch' if found.
+ * Returns null pointer otherwise.
+ */
+void *memchr(const void *buffer, int ch, size_t count);
+
+
+/* Standard function: memcmp
+ * -------------------------------
+ * Compares the first 'count' characters of both arrays.
+ *
+ * Returns less than zero if 'buf1' is less than 'buf2'.
+ * Returns zero if 'buf1' is equal to 'buf2'.
+ * Returns greater than zero if 'buf1' is greater than 'buf2'.
+ */
+int memcmp(const void *buf1, const void *buf2, size_t count);
+
+
+/* Standard function: memcpy
+ * -------------------------------
+ * Copies 'count' characters from the array pointed to by 'from'
+ * to the array pointed to by 'to'.
+ *
+ * Returns 'to'.
+ */
+void *memcpy(void *to, const void *from, size_t count);
+
+
+/* Standard function: memmove
+ * -------------------------------
+ * Copies 'count' characters from the array pointed to by 'from'
+ * to the array pointed to by 'to'.
+ *
+ * Returns 'to'.
+ */
+#define memmove(to, from, count) memcpy(to, from, count)
+
+
+/* Standard function: memset
+ * -------------------------------
+ * Copies low order byte of 'ch' into the first 'count' characters
+ * of array pointed to by 'buf'.
+ *
+ * Returns 'buf'.
+ */
+void *memset(void *buf, int ch, size_t count);
+
+
+/* Standard function: strcat
+ * -------------------------------
+ * Concatenates a copy of 'str2' to 'str1' and terminates 'str1' with
+ * a null character.
+ *
+ * Returns 'str1'.
+ */
+char *strcat(char *str1, const char *str2);
+
+
+/* Standard function: strchr
+ * -------------------------------
+ * Returns pointer to first occurrence of the low-order byte of 'ch' in 'str'.
+ * Returns null if not found.
+ */
+char *strchr(const char *str, int ch);
+
+
+/* Standard function: strcmp
+ * -------------------------------
+ * Lexicographically compares 'str1' and 'str2'.
+ *
+ * Returns less than zero if 'str1' is less than 'str2'.
+ * Returns zero if 'str1' is equal to 'str2'.
+ * Returns greater than zero if 'str1' is greater than 'str2'.
+ */
+int strcmp(const char *str1, const char *str2);
+
+
+/* Standard function: strcoll
+ * -------------------------------
+ * Compares 'str1' with 'str2' in accordance to locale specified by setlocale().
+ *
+ * Returns less than zero if 'str1' is less than 'str2'.
+ * Returns zero if 'str1' is equal to 'str2'.
+ * Returns greater than zero if 'str1' is greater than 'str2'.
+ */
+int strcoll(const char *str1, const char *str2);
+
+
+/* Standard function: strcpy
+ * -------------------------------
+ * Copies contents of null-terminated string pointed to by 'str2' into 'str1'. 
+ *
+ * Returns 'str1'.
+ */
+char *strcpy(char *str1, const char *str2);
+
+
+/* Standard function: strcspn
+ * -------------------------------
+ * Returns index of the first character in the string pointed to by 'str1'
+ * that matches any of the characters in 'str2'.
+ */
+size_t strcspn(const char *str1, const char *str2);
+
+
+/* Standard function: strerror
+ * -------------------------------
+ * Interprets 'errnum' and returns a pointer to an error string that shall not
+ * be modified by the program.
+ */
+char *strerror(int errnum);
+
+
+/* Standard function: strlen
+ * -------------------------------
+ * Returns length of the null-terminated string pointed to by 'str', not
+ * counting the null terminator.
+ */
+size_t strlen(const char *str);
+
+
+/* Standard function: strncat
+ * -------------------------------
+ * Concatenates not more than 'count' characters of 'str2' to
+ * 'str1' and terminates 'str1' with a null character.
+ *
+ * Returns 'str1'.
+ */
+char *strncat(char *str1, const char *str2, size_t count);
+
+
+/* Standard function: strncmp
+ * -------------------------------
+ * Lexicographically compares not more than 'count' characters of 'str1' and 'str2'.
+ *
+ * Returns less than zero if 'str1' is less than 'str2'.
+ * Returns zero if 'str1' is equal to 'str2'.
+ * Returns greater than zero if 'str1' is greater than 'str2'.
+ */
+int strncmp(const char *str1, const char *str2, size_t count);
+
+
+/* Standard function: strncpy
+ * -------------------------------
+ * Copies up to 'count' characters from 'str2' into 'str1'. 'str2'
+ * must be null-terminated.
+ *
+ * Returns 'str1'.
+ */
+char *strncpy(char *str1, const char *str2, size_t count);
+
+
+/* Standard function: strpbrk
+ * -------------------------------
+ * Returns pointer to first character in 'str1' that matches any character in
+ * 'str2'. Null-terminators are not counted.
+ * Returns null if there is no match.
+ */
+char *strpbrk(const char *str1, const char *str2);
+
+
+/* Standard function: strrchr
+ * -------------------------------
+ * Returns pointer to last occurrence of the low-order byte of 'ch' in 'str'.
+ * Returns null if no match is found.
+ */
+char *strrchr(const char *str, int ch);
+
+
+/* Standard function: strspn
+ * -------------------------------
+ * Returns index of the first character in 'str1' that does not match
+ * any of the characters in 'str2'.
+ */
+size_t strspn(const char *str1, const char *str2);
+
+
+/* Standard function: strstr
+ * -------------------------------
+ * Returns a pointer to the first occurrence of 'str2' in 'str1'.
+ * Returns null if not found.
+ */
+char *strstr(const char *str1, const char *str2);
+
+
+/* Standard function: strtok
+ * -------------------------------
+ * Returns a pointer to the next token in 'str1'. The characters in
+ * 'str2' are the delimiters that determine the token. The first call
+ * to strtok() requires 'str1' to point to the string being tokenized.
+ * Subsequent calls require 'str1' to be null.
+ */
+char *strtok(char *str1, const char *str2);
+
+
+/* Standard function: strxfrm
+ * -------------------------------
+ * Transforms 'str2' so that it can be used by strcmp() and puts the
+ * result into 'str1'. After the transformation, the outcome of
+ * strcmp() using 'str1' and strcoll() using original 'str2' will
+ * be equal. Not more than 'count' characters are written to 'str1'.
+ *
+ * Returns length of the transformed string.
+ */
+size_t strxfrm(char *str1, const char *str2, size_t count);
+
+
+
+#endif /* __C_STRING_ */
